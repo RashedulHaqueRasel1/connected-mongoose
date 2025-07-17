@@ -1,6 +1,7 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { notesRouter } from './controllers/notes.controllers';
+import { userRouter } from './controllers/users.controllers';
 
 
 const app: Application = express();
@@ -11,6 +12,7 @@ app.use(express.json());
 
 // ✅ Register the notes router
 app.use("/notes", notesRouter);
+app.use("/users", userRouter);
 
 
 
